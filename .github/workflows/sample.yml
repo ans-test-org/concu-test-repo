@@ -12,6 +12,7 @@ jobs:
     steps:
       - run: | 
           sleep 60
+          echo ${{ github.ref_name }}
           echo ${{ github.ref_name == 'master' && github.run_id || github.ref }}
           echo ${{ github.ref_name != 'master' }}
      
