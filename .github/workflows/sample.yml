@@ -4,7 +4,7 @@ on:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: ${{ !contains(github.ref, 'main')}}
+  cancel-in-progress: ${{ contains(github.ref, 'main')}}
   
 jobs:
   test-job:
