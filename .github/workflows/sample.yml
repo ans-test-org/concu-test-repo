@@ -3,7 +3,7 @@ on:
   push
 
 concurrency:
-  group: ${{ github.ref_name == 'master' && github.run_id || join([github.workflow,github.ref]) }}
+  group: ${{ github.ref_name }}
   cancel-in-progress: ${{ github.ref_name != 'main' }}
   
 jobs:
@@ -12,6 +12,6 @@ jobs:
     steps:
       - run: | 
           sleep 30
-          echo ${{ github.ref_name == 'main' && github.run_id || join([github.workflow,github.ref]) }}
+          echo ${{ github.ref_name }}
           echo ${{ github.ref_name != 'main' }}
      
