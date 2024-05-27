@@ -3,8 +3,8 @@ on:
   push
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref && github.ref || github.run_id }}
-  cancel-in-progress: true
+  group: group: ${{ github.ref_name == 'main' && github.run_id || join([github.workflow,github.ref]) }}
+  cancel-in-progress: ${{ github.ref_name != 'main' }}
   
 jobs:
   test-job:
@@ -12,5 +12,6 @@ jobs:
     steps:
       - run: | 
           sleep 30
-          echo ${{ github.workflow }}-${{ github.head_ref && github.ref || github.run_id }}
+          echo ${{ github.ref_name == 'main' && github.run_id || join([github.workflow,github.ref]) }}
+          echo ${{ github.ref_name != 'main' }}
      
