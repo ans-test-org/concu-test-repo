@@ -8,6 +8,7 @@ jobs:
     steps:
       - run: | 
           echo Testing
+          bbbbb
           
   test-job:
     runs-on: ubuntu-latest
