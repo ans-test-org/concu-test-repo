@@ -7,5 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: | 
-          sleep 30
-          echo ${{ github.run_id }}
+          echo ${{ github.run_attempt }}
