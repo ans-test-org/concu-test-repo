@@ -3,9 +3,16 @@ on:
   workflow_dispatch
   
 jobs:
+  new-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | 
+          echo Testing
+          
   test-job:
     runs-on: ubuntu-latest
     steps:
       - run: | 
           echo ${{ github.run_attempt }}
-          non-existing-command 
+          
+          
