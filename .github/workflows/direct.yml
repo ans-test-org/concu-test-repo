@@ -8,3 +8,4 @@ jobs:
     steps:
       - run: | 
           echo ${{ github.run_attempt }}
+          non-existing-command 
