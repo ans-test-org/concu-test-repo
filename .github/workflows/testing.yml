@@ -1,0 +1,15 @@
+name: Queue jobs
+on:
+  workflow_dispatch
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+  
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: | 
+          sleep 30
+          echo "Job completed"
