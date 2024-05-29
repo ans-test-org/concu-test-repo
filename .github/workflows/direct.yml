@@ -1,4 +1,4 @@
-name: No concurrency
+name: Testing run_attempt
 on:
   workflow_dispatch
   
@@ -10,13 +10,5 @@ jobs:
       - run: |
           echo ${{ github.run_attempt }}
       - run: | 
-          echo Testing
-          bbbbb
-          
-  test-job:
-    runs-on: ubuntu-latest
-    steps:
-      - run: | 
-          echo ${{ github.run_attempt }}
-          
+          non-existing-bad-command
           
