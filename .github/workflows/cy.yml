@@ -13,6 +13,7 @@ jobs:
     needs: new-job
     steps:
       - run: |
+          date
           echo ${{ github.run_attempt }}
   new-job3:
     runs-on: ubuntu-latest
