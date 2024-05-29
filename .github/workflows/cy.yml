@@ -1,0 +1,23 @@
+name: Testing run_attempt
+on:
+  push:
+    branches: [ main ]
+  
+jobs:
+  new-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo test
+  new-job2:
+    runs-on: ubuntu-latest
+    needs: new-job
+    steps:
+      - run: |
+          echo ${{ github.run_attempt }}
+  new-job3:
+    runs-on: ubuntu-latest
+    needs: new-job2
+    steps:
+      - run: |
+          non-existing-bad-command
