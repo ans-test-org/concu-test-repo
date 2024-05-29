@@ -10,5 +10,5 @@ jobs:
       - run: |
           echo ${{ github.run_attempt }}
       - run: | 
-          non-existing-bad-command
+          echo "testing..."
           
