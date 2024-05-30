@@ -8,4 +8,4 @@ jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Test complete..."
+      - run: sleep 20
