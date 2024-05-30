@@ -1,0 +1,11 @@
+name: Test Queue jobs
+on:
+  push:
+    branches:
+      - feature/*
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Test complete..."
