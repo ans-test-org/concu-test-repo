@@ -1,8 +1,6 @@
 name: Test Queue jobs
 on:
-  push:
-    branches:
-      - feature/*
+  create
 
 jobs:
   test-job:
