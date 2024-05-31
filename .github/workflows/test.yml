@@ -2,7 +2,7 @@ name: Test Queue jobs
 on:
   push:
     branches:
-      - feature**
+      - feature/*
 
 jobs:
   test-job:
